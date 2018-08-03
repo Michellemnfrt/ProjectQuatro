@@ -1,0 +1,18 @@
+{% extends 'repairs/base.html' %} {% block content %}
+<h2>{{ repair.date }}
+</h2>
+<h4>{{ repair.invoice_num }}</h4>
+<li>{{ repair.area_serviced }}</li>
+<li>{{ repair.location }}</li>
+<!-- <img src="{{ repair.photo_url }}" alt="" class="repair-photo"> -->
+<h3>cars
+    <a href="{% url 'song_create' %}">(+)</a>
+</h3>
+<ul>
+    {% for car in repair.cars.all %}
+    <li>
+        <a href="{% url 'car_detail' pk=car.pk %}">{{ car.owner }}-{{ car.vin_num }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

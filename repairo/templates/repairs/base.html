@@ -1,0 +1,26 @@
+ {% load staticfiles %}
+<html>
+
+<head>
+    <title>Service tracker</title>
+    <link rel="stylesheet" href="{% static '/cssrepairs.css' %}">
+</head>
+
+<body>
+    <h1>Welcome to the Service Warranty Tracker </h1>
+    <nav>
+        <a href="/cars">Cars that have been serviced</a>
+        <a href="/">Repairs</a>
+        <div class="user-info">
+            {% if user.is_authenticated %} Welcome, {{ user.username }}
+            <a href="{% url 'logout' %}">Signout</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Signup</a>
+            {% endif %}
+        </div>
+    </nav>
+    {% block content %} {% endblock %}
+</body>
+
+</html>

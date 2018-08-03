@@ -1,0 +1,14 @@
+{% extends 'repairs/base.html' %} {% block content %}
+<h2>Repairs {{ repair.name }}
+
+    <h3>Repairs
+        <a href="{% url 'repair_create' %}">(+)</a>
+    </h3>
+    <ul>
+        {% for repair in repairs %}
+        <li>
+            <a href="{% url 'repair_detail' pk=repair.pk %}">{{ repair.date }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}

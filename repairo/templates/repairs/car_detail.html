@@ -1,0 +1,7 @@
+{% extends 'repairs/base.html' %} {% block content %}
+<h2>{{ car.title }}
+    <a href="{% url 'car_edit' pk=car.pk %}">(edit)</a>
+</h2>
+<h3>By: {{ car.repair.date }}</h3>
+
+license_plate: {{ car.license_plate }} {% endblock %}
