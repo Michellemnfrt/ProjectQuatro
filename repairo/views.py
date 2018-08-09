@@ -27,7 +27,7 @@ def repair_list(request):
 
 
 def repair_detail(request, pk):
-    repair = Repair.objects.get(id=pk)
+    repair = Repair.objects.get(pk=pk)
     return render(request, 'repairs/repair_detail.html', {'repair': repair})
 
 
@@ -99,7 +99,7 @@ def car_edit(request, pk):
 
 @login_required
 def car_delete(request, pk):
-    Car.objects.get(id=pk).delete()
+    Car.objects.get(pk=pk).delete()
     return redirect('car_list')
 
 

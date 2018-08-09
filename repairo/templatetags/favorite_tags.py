@@ -4,5 +4,5 @@ register = template.Library()
 
 
 @register.filter(name='has_favorite')
-def has_favorite(song, user):
-    return song.favorites.filter(user=user).exists()
+def has_favorite(car, user):
+    return car.favorites.filter(user=user).exists()
