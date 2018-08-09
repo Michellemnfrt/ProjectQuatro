@@ -17,7 +17,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Car',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('owner', models.CharField(max_length=100)),
                 ('vin_num', models.CharField(max_length=30)),
                 ('license_plate', models.CharField(max_length=12)),
@@ -29,20 +30,25 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Favorite',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('song', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='favorites', to='repairo.Car')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='favorites', to=settings.AUTH_USER_MODEL)),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
+                ('song', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                           related_name='favorites', to='repairo.Car')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                           related_name='favorites', to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
             name='Repair',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.CharField(max_length=13)),
                 ('area_serviced', models.TextField()),
                 ('invoice_num', models.CharField(max_length=500)),
                 ('location', models.CharField(max_length=500)),
-                ('car', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='repairs', to='repairo.Car')),
+                ('car', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                          related_name='repairs', to='repairo.Car')),
             ],
         ),
     ]

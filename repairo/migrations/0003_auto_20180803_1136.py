@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='repair',
             name='car',
-            field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, related_name='repairs', to='repairo.Car'),
+            field=models.ForeignKey(
+                blank=True, on_delete=django.db.models.deletion.CASCADE, related_name='repairs', to='repairo.Car'),
         ),
     ]
