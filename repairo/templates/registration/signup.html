@@ -1,4 +1,4 @@
-{% extends 'repairo/base.html' %} {% block content %}
+{% extends '../repairs/base.html' %} {% block content %}
 <h2>Sign up</h2>
 <form method="POST">
     {% csrf_token %} {{ form.as_p }}

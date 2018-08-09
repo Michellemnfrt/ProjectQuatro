@@ -103,15 +103,15 @@ def car_delete(request, pk):
     return redirect('car_list')
 
 
-@login_required
-def add_favorite(request, car_id):
-    car = Car.objects.get(id=car_id)
-    Favorite.objects.create(car=car, user=request.user)
-    return redirect('repair_detail', pk=car.repair.pk)
+# @login_required
+# def add_favorite(request, car_id):
+#     car = Car.objects.get(id=car_id)
+#     Favorite.objects.create(car=car, user=request.user)
+#     return redirect('repair_detail', pk=car.repair.pk)
 
 
-@login_required
-def remove_favorite(request, car_id):
-    car = Car.objects.get(id=car_id)
-    Favorite.objects.get(car=car, user=request.user).delete()
-    return redirect('repair_detail', pk=car.repair.pk)
+# @login_required
+# def remove_favorite(request, car_id):
+#     car = Car.objects.get(id=car_id)
+#     Favorite.objects.get(car=car, user=request.user).delete()
+#     return redirect('repair_detail', pk=car.repair.pk)
