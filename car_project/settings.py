@@ -25,7 +25,7 @@ SECRET_KEY = 'qe)m7&)i*pgl=(zi11(eus6e_j95o5159in_)62+bw37gm5am5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Michellemnfrt.pythonanywhere.com']
 LOGIN_REDIRECT_URL = 'repair_list'
 
 # Application definition
