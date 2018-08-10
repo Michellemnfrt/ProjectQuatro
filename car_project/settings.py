@@ -121,4 +121,4 @@ USE_L10N = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'michellemonfort/wdi/projects/4/car_app/car_project/repairo/static/'
+STATIC_ROOT = 'michellemonfort/wdi/projects/4/car_app/static/'
