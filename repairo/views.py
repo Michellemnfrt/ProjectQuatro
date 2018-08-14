@@ -27,7 +27,7 @@ def repair_list(request):
 
 
 def repair_detail(request, pk):
-    repair = Repair.objects.get(id=pk)
+    repair = Repair.objects.get(pk=pk)
     return render(request, 'repairs/repair_detail.html', {'repair': repair})
 
 

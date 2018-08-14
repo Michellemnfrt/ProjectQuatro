@@ -25,8 +25,10 @@ SECRET_KEY = 'qe)m7&)i*pgl=(zi11(eus6e_j95o5159in_)62+bw37gm5am5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Michellemnfrt.pythonanywhere.com']
+
+ALLOWED_HOSTS = ['michellemnfrt.pythonanywhere.com']
 LOGIN_REDIRECT_URL = 'repair_list'
+
 
 # Application definition
 
@@ -119,4 +121,4 @@ USE_L10N = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = 'michellemonfort/wdi/projects/4/car_app/static/'
