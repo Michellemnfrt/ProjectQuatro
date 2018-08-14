@@ -25,12 +25,7 @@ SECRET_KEY = 'qe)m7&)i*pgl=(zi11(eus6e_j95o5159in_)62+bw37gm5am5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-
-ALLOWED_HOSTS = ['michellemnfrt.pythonanywhere.com']
-=======
 ALLOWED_HOSTS = ['Michellemnfrt.pythonanywhere.com', '127.0.0.1']
->>>>>>> depole
 LOGIN_REDIRECT_URL = 'repair_list'
 
 
