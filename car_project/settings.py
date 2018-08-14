@@ -26,7 +26,7 @@ SECRET_KEY = 'qe)m7&)i*pgl=(zi11(eus6e_j95o5159in_)62+bw37gm5am5'
 DEBUG = True
 
 ALLOWED_HOSTS = ['Michellemnfrt.pythonanywhere.com', '127.0.0.1']
-LOGIN_REDIRECT_URL = 'login.html'
+LOGIN_REDIRECT_URL = 'repair_list'
 
 # Application definition
 
