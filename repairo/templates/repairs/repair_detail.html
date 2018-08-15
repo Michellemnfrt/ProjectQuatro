@@ -6,7 +6,7 @@
 <li>{{ repair.location }}</li>
 <!-- <img src="{{ repair.photo_url }}" alt="" class="repair-photo"> -->
 <h3>cars
-    <a href="{% url 'song_create' %}">(+)</a>
+    <a href="{% url 'repair_create' %}">(+)</a>
 </h3>
 <ul>
     {% for car in repair.cars.all %}

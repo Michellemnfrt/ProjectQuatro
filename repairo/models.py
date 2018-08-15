@@ -9,6 +9,7 @@ class Car(models.Model):
     serv_hist = models.TextField(null=True, blank=True)
     make = models.CharField(max_length=500)
     model = models.CharField(max_length=500)
+    
     # repair = models.ForeignKey(
     #     Repair, on_delete=models.CASCADE, related_name='cars', blank=True)
 
@@ -21,8 +22,9 @@ class Repair(models.Model):
     area_serviced = models.TextField(null=True, blank=True)
     invoice_num = models.CharField(max_length=500)
     location = models.CharField(max_length=500)
-    car = models.ForeignKey(
-        Car, on_delete=models.CASCADE, related_name='repairs', blank=True)
+    car = models.CharField(max_length=500)
+    # car = models.ForeignKey(
+    #     Car, on_delete=models.CASCADE, related_name='repairs', blank=True)
 
     def __str__(self):
         return self.date
