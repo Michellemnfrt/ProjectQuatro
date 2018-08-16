@@ -1,11 +1,11 @@
 from django import forms
-from .models import Repair, Car
+from .models import repair, Car
 
 
-class RepairForm(forms.ModelForm):
+class repairForm(forms.ModelForm):
 
     class Meta:
-        model = Repair
+        model = repair
         fields = ('date', 'area_serviced', 'invoice_num', 'location', 'car',)
 
 

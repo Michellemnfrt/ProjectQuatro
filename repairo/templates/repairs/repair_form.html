@@ -1,5 +1,5 @@
 {% extends 'repairs/base.html' %} {% block content %}
-<h1>New Repair</h1>
+<h1>New repair</h1>
 <form method="POST" class="repair-form">
     {% csrf_token %} {{ form.as_p }}
     <button type="submit" class="save btn btn-default">Save</button>

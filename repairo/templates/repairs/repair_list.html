@@ -1,14 +1,14 @@
 {% extends 'repairs/base.html' %} {% block content %}
-<h2>Repairs {{ repair.date }}
+<h2>repairs {{ repair.date }}
 
-    <h3>Repairs
+    <h3>repairs
         <a href="{% url 'repair_create' %}">(+)</a>
     </h3>
     <img src="{{ repair.image_url }}" alt="" class="repair-photo">
     <ul>
         {% for repair in repairs %}
         <li>
-            <a href="{% url 'repair_detail' pk=repair.id %}">{{ repair.date }}</a>
+            <a href="{% url 'repair_detail' pk=repair.pk %}">{{ repair.date }}</a>
         </li>
         {% endfor %}
     </ul>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Repair, Car
-from .forms import RepairForm, CarForm
+from .models import repair, Car
+from .forms import repairForm, CarForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 
@@ -22,43 +22,43 @@ def sign_up(request):
 
 
 def repair_list(request):
-    repairs = Repair.objects.all()
+    repairs = repair.objects.all()
     return render(request, 'repairs/repair_list.html', {'repairs': repairs})
 
 
 def repair_detail(request, pk):
-    repair = Repair.objects.get(pk=pk)
+    repair = repair.objects.get(pk=pk)
     return render(request, 'repairs/repair_detail.html', {'repair': repair})
 
 
 @login_required
 def repair_create(request):
     if request.method == 'POST':
-        form = RepairForm(request.POST)
+        form = repairForm(request.POST)
         if form.is_valid():
             repair = form.save()
             return redirect('repair_detail', pk=repair.pk)
     else:
-        form = RepairForm()
+        form = repairForm()
     return render(request, 'repairs/repair_form.html', {'form': form})
 
 
 @login_required
 def repair_edit(request, pk):
-    repair = Repair.objects.get(pk=pk)
+    repair = repair.objects.get(pk=pk)
     if request.method == "POST":
-        form = RepairForm(request.POST, instance=repair)
+        form = repairForm(request.POST, instance=repair)
         if form.is_valid():
             repair = form.save()
             return redirect('repair_detail', pk=repair.pk)
     else:
-        form = RepairForm(instance=repair)
+        form = repairForm(instance=repair)
     return render(request, 'repairs/repair_form.html', {'form': form})
 
 
 @login_required
 def repair_delete(request, pk):
-    Repair.objects.get(pk=pk).delete()
+    repair.objects.get(pk=pk).delete()
     return redirect('repair_list')
 
 

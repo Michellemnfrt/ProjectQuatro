@@ -11,13 +11,13 @@ class Car(models.Model):
     model = models.CharField(max_length=500)
     
     # repair = models.ForeignKey(
-    #     Repair, on_delete=models.CASCADE, related_name='cars', blank=True)
+    #     repair, on_delete=models.CASCADE, related_name='cars', blank=True)
 
     def __str__(self):
         return self.owner
 
 
-class Repair(models.Model):
+class repair(models.Model):
     date = models.CharField(max_length=13)
     area_serviced = models.TextField(null=True, blank=True)
     invoice_num = models.CharField(max_length=500)
