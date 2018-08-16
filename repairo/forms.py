@@ -6,7 +6,7 @@ class RepairForm(forms.ModelForm):
 
     class Meta:
         model = Repair
-        fields = ('date', 'area_serviced', 'invoice_num', 'location', 'Car',)
+        fields = ('date', 'area_serviced', 'invoice_num', 'location', 'car')
 
 
 class CarForm(forms.ModelForm):

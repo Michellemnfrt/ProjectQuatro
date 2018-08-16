@@ -19,7 +19,7 @@ class Repair(models.Model):
     area_serviced = models.TextField(null=True, blank=True)
     invoice_num = models.CharField(max_length=500)
     location = models.CharField(max_length=500)
-    Car = models.CharField(max_length=500, null=True, blank=True)
+    car = models.CharField(max_length=500, null=True, blank=True)
     # car = models.ForeignKey(
     #     Car, on_delete=models.CASCADE, related_name='repairs', blank=True)
 
