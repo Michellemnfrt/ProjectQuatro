@@ -9,8 +9,8 @@ class Car(models.Model):
     serv_hist = models.TextField(null=True, blank=True)
     make = models.CharField(max_length=500)
     model = models.CharField(max_length=500)
-    repair = models.ForeignKey(
-        Repair, on_delete=models.CASCADE, related_name='cars', blank=True)
+    # repair = models.ForeignKey(
+    #     Repair, on_delete=models.CASCADE, related_name='cars', blank=True)
 
     def __str__(self):
         return self.owner

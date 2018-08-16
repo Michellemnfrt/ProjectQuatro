@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Repair, Car
@@ -27,8 +28,8 @@ def repair_list(request):
 
 
 def repair_detail(request, pk):
-    repair = Repair.objects.get(pk=pk)
-    return render(request, 'repair/repair_detail.html', {'repair': repair})
+    repair = Repair.objects.get(id=pk)
+    return render(request, 'repairs/repair_detail.html', {'repair': repair})
 
 
 @login_required
@@ -58,7 +59,7 @@ def repair_edit(request, pk):
 
 @login_required
 def repair_delete(request, pk):
-    Repair.objects.get(pk=pk).delete()
+    Repair.objects.get(id=pk).delete()
     return redirect('repair_list')
 
 
@@ -68,7 +69,7 @@ def car_list(request):
 
 
 def car_detail(request, pk):
-    car = Car.objects.get(pk=pk)
+    car = Car.objects.get(id=pk)
     return render(request, 'repairs/car_detail.html', {'car': car})
 
 
@@ -99,19 +100,19 @@ def car_edit(request, pk):
 
 @login_required
 def car_delete(request, pk):
-    Car.objects.get(pk=pk).delete()
+    Car.objects.get(id=pk).delete()
     return redirect('car_list')
 
 
-@login_required
-def add_favorite(request, car_id):
-    car = Car.objects.get(id=car_id)
-    Favorite.objects.create(car=car, user=request.user)
-    return redirect('repair_detail', pk=car.repair.pk)
+# @login_required
+# def add_favorite(request, car_id):
+#     car = Car.objects.get(id=car_id)
+#     Favorite.objects.create(car=car, user=request.user)
+#     return redirect('repair_detail', pk=car.repair.pk)
 
 
-@login_required
-def remove_favorite(request, car_id):
-    car = Car.objects.get(id=car_id)
-    Favorite.objects.get(car=car, user=request.user).delete()
-    return redirect('repair_detail', pk=car.repair.pk)
+# @login_required
+# def remove_favorite(request, car_id):
+#     car = Car.objects.get(id=car_id)
+#     Favorite.objects.get(car=car, user=request.user).delete()
+#     return redirect('repair_detail', pk=car.repair.pk)
