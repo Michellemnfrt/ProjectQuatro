@@ -3,6 +3,6 @@
     <a href="{% url 'car_edit' pk=car.pk %}">(edit)</a>
 </h2>
 <h3>Create a new car instance <a href="{% url 'car_create' %}">(+)</a></h3>
-<h3>By: {{ car.repair.all }}</h3>
+<h3>By: {{ car.repairs.all }}</h3>
 
 license_plate: {{ car.license_plate }} {% endblock %}
