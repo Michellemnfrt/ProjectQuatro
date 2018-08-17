@@ -9,7 +9,7 @@
     <a href="{% url 'car_create' %}">(+)</a>
 </h3>
 <ul>
-    {% for car in repair.cars.all %}
+    {% comment %} {% for car in repair.cars.all %} {% endcomment %}
     <li>
         <a href="{% url 'car_detail' pk=car.pk %}">{{ car.owner }}-{{ car.vin_num }}</a>
     </li>

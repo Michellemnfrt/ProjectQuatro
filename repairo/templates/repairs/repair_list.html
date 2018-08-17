@@ -1,8 +1,7 @@
 {% extends 'repairs/base.html' %} {% block content %}
 <h2>Repairs {{ repair.date }}
 
-    <h3>Repairs
-        <a href="{% url 'repair_create' %}">(+)</a>
+    <h3>Repairs {% comment %} <a href="{% url 'repair_create' %}">(+)</a> {% endcomment %}
     </h3>
     <img src="{{ repair.image_url }}" alt="" class="repair-photo">
     <ul>

@@ -4,5 +4,11 @@
 </h2>
 <h3>Create a new car instance <a href="{% url 'car_create' %}">(+)</a></h3>
 <h3>By: {{ car.repairs.all }}</h3>
-
-license_plate: {{ car.license_plate }} {% endblock %}
+<ul>
+    {% for repair in car.repair.all %}
+    <li>
+        license_plate: {{ car.license_plate }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

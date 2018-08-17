@@ -4,7 +4,7 @@
 <ul>
     {% for car in cars %}
     <li>
-        <a href="{% url 'car_detail' pk=car.pk %}">{{ car.date }} Car Detail {{ car.repair.name }}</a>
+        <a href="{% url 'car_detail' pk=car.id %}">{{ car.date }} Car Detail </a>
     </li>
     {% endfor %}
 </ul>
